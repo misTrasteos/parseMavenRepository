@@ -1,0 +1,11 @@
+output:
+  path: 'output'
+  delete: True
+
+sourceRepository: '/mvn-docker/repository'
+
+distributionManagement:
+  id: 'reposilite'
+  url: 'http://localhost/snapshots'
+  username: 'snapshot'
+  password: ' ... ... '

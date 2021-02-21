@@ -1,0 +1,36 @@
+<project>  
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>org.acme.uploadArtifact</groupId>
+    <artifactId>uploadArtifact-{{artifactId}}</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+  
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0-M1</version>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>deploy-file</goal>
+                        </goals>
+                        
+                        <phase>generate-resources</phase> <!-- esto es para que no me haga el deploy de este módulo --> <!-- si no debería de poner el skip --> <!-- más limpio el skip ???--> 
+                        
+                        <configuration>
+                            <file>{{file}}</file>
+                            <pomFile>{{pomFile}}</pomFile>
+                            <repositoryId>{{repositoryId}}</repositoryId>
+                            <url>{{url}}</url>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

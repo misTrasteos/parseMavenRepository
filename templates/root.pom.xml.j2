@@ -1,0 +1,14 @@
+<project>  
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>org.acme.uploadArtifact</groupId>
+    <artifactId>uploadArtifact-root</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        {% for module in modules %}<module>{{module.name}}</module><!-- {{module.sourcePath}}, {{module.jarFile}}, {{module.pomFile}} -->
+        {% endfor %}
+	</modules>
+</project>
